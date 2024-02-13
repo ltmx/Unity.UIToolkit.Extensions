@@ -228,7 +228,7 @@ public static partial class UIToolKitExtensions
    
     public static T BackgroundImage<T>(this T e, Texture2D value) where T : VisualElement => (e.style.backgroundImage = value, e).Item2;
     public static T BackgroundImageTintColor<T>(this T e, Color value) where T : VisualElement => (e.style.unityBackgroundImageTintColor = value, e).Item2;
-    public static T BackgroundSize<T>(this T e, BackgroundSize value) where T : VisualElement => (e.style.backgroundSize = value, e).Item2;
+    public static T BackgroundSize<T>(this T e, BackgroundSizeType value) where T : VisualElement => (e.style.backgroundSize = new StyleBackgroundSize(new BackgroundSize(value)), e).Item2;
     public static T BackgroundRepeat<T>(this T e, BackgroundRepeat value) where T : VisualElement => (e.style.backgroundRepeat = value, e).Item2;
     
     public static T Text<T>(this T e, string value) where T : TextElement => (e.text = value, e).Item2;
