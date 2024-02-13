@@ -12,7 +12,7 @@
   "dependencies": {
     "com.unity.ugui": "1.0.0",
     "com.unity.mathematics": "1.2.6",
-    "com.ltmx.cs.extensions": "https://github.com/ltmx/Unity.CSharp.Extensions.git#v1.0.0"
+    "com.ltmx.cs.extensions": "https://github.com/ltmx/Unity.CSharp.Extensions.git"
   },
   "keywords": [
     "unity",
