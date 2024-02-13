@@ -1,0 +1,23 @@
+{
+  "author": {
+    "name": "LTMX",
+    "email": "nicolasreinhard.pro@gmail.com",
+    "url": "https://linktr.ee/nicolasreinhard"
+  },
+  "displayName": "UIToolkit Extensions",
+  "name": "com.ltmx.unity.uitoolkit.extensions",
+  "repository": "github:ltmx/Unity.UIToolkit.Extensions",
+  "description": "Extension methods for my packages",
+  "version": "1.0.0",
+  "keywords": [
+    "unity",
+    "extension",
+    "ui",
+    "uitoolkit",
+    "extensions",
+    "ltmx",
+    "helper",
+    "utils"
+  ],
+  "license": "MIT"
+}
