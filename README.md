@@ -1,6 +1,14 @@
 # Unity.UIToolkit.Extensions
 Extension Library for Unity UIElements
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/ltmx/Unity.UIToolkit.Extensions?color=blueviolet&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/ltmx/Unity.UIToolkit.Extensions?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/ltmx/Unity.UIToolkit.Extensions?color=success&style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/ltmx/Unity.UIToolkit.Extensions?style=for-the-badge)
+<!--
+[![openupm](https://img.shields.io/npm/v/com.ltmx.mathematics.mathx?label=openupm&style=for-the-badge&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.ltmx.mathematics.mathx)
+-->
+
 ## Create UI using LINQ Syntax
 Looks :
 ```cs
