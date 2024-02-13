@@ -1,5 +1,5 @@
 # Unity.UIToolkit.Extensions
-Extension Methods to better build UI through code using Unity UIElements
+Extension Library for Unity UIElements
 
 ## Create UI using LINQ Syntax
 Looks :
