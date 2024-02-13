@@ -52,18 +52,18 @@ myButton.WhereClassListContains("unity-text-element").ClearUSS();
 
 ## An example of how I create a Path Field
 
-```
-    public PathField(string name) : base(name)
-    {
-        var button = new ActionButton(OpenPathInExplorer)
-            .USS("open-button")
-            .FlexShrink(1)
-            .FlexGrow(1)
-            .AlignSelf(Align.Center)
-            .Margin(0)
-            .MarginRight(8)
-            .Size(24)
-            .BackgroundSize(BackgroundSizeType.Contain);
-        Insert(1, button);
-    }
+```cs
+public PathField(string name) : base(name)
+{
+    var button = new ActionButton(OpenPathInExplorer)
+        .USS("open-button")
+        .FlexShrink(1)
+        .FlexGrow(1)
+        .AlignSelf(Align.Center)
+        .Margin(0)
+        .MarginRight(8)
+        .Size(24)
+        .BackgroundSize(BackgroundSizeType.Contain);
+    Insert(1, button);
+}
 ```
