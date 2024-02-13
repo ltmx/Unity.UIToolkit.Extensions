@@ -9,6 +9,9 @@
   "repository": "github:ltmx/Unity.UIToolkit.Extensions",
   "description": "Extension methods for my packages",
   "version": "1.0.0",
+  "dependencies": {
+    "com.unity.ugui": "2.0.0"
+  },
   "keywords": [
     "unity",
     "extension",
