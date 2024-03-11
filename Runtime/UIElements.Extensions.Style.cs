@@ -131,6 +131,8 @@ public static partial class UIToolKitExtensions
     public static T Bottom<T>(this T e, float value) where T : VisualElement => (e.style.bottom = value, e).Item2;
     public static T Left<T>(this T e, float value) where T : VisualElement => (e.style.left = value, e).Item2;
     
+    public static T Translate<T>(this T e, float2 value) where T : VisualElement => (e.style.translate = new Translate(value.x, value.y), e).Item2;
+    public static T Translate<T>(this T e, Vector2 value) where T : VisualElement => (e.style.translate = new Translate(value.x, value.y), e).Item2;
     #endregion
     
     #region Margin & Padding
@@ -169,8 +171,9 @@ public static partial class UIToolKitExtensions
     public static T MaxHeight<T>(this T e, float value) where T : VisualElement => (e.style.maxHeight = value, e).Item2;
     
     // Transformations
+    public static T Scale<T>(this T e, Vector2 value) where T : VisualElement => (e.style.scale = value, e).Item2;
     public static T Scale<T>(this T e, float2 value) where T : VisualElement => (e.style.scale = new StyleScale(value), e).Item2;
-    public static T Rotate<T>(this T e, float value) where T : VisualElement => (e.style.rotate = new StyleRotate(new Rotate(new Angle(value))), e).Item2;
+    public static T Rotate<T>(this T e, float value) where T : VisualElement => (e.style.rotate = new Rotate(new Angle(value)), e).Item2;
 
     #endregion
     
@@ -189,8 +192,8 @@ public static partial class UIToolKitExtensions
     
     
     // Font Options
-    public static T Font<T>(this T e, StyleFont value) where T : VisualElement => (e.style.unityFont = value, e).Item2;
-    public static T FontDefinition<T>(this T e, StyleFontDefinition value) where T : VisualElement => (e.style.unityFontDefinition = value, e).Item2;
+    public static T Font<T>(this T e, Font value) where T : VisualElement => (e.style.unityFont = value, e).Item2;
+    public static T FontDefinition<T>(this T e, FontDefinition value) where T : VisualElement => (e.style.unityFontDefinition = value, e).Item2;
     public static T FontDefinition<T>(this T e, FontAsset value) where T : VisualElement => (e.style.unityFontDefinition = new StyleFontDefinition(value), e).Item2;
     
     public static T FontSize<T>(this T e, int value) where T : VisualElement => (e.style.fontSize = value, e).Item2;
@@ -228,7 +231,7 @@ public static partial class UIToolKitExtensions
    
     public static T BackgroundImage<T>(this T e, Texture2D value) where T : VisualElement => (e.style.backgroundImage = value, e).Item2;
     public static T BackgroundImageTintColor<T>(this T e, Color value) where T : VisualElement => (e.style.unityBackgroundImageTintColor = value, e).Item2;
-    public static T BackgroundSize<T>(this T e, BackgroundSizeType value) where T : VisualElement => (e.style.backgroundSize = new StyleBackgroundSize(new BackgroundSize(value)), e).Item2;
+    public static T BackgroundSize<T>(this T e, BackgroundSizeType value) where T : VisualElement => (e.style.backgroundSize = new BackgroundSize(value), e).Item2;
     public static T BackgroundRepeat<T>(this T e, BackgroundRepeat value) where T : VisualElement => (e.style.backgroundRepeat = value, e).Item2;
     
     public static T Text<T>(this T e, string value) where T : TextElement => (e.text = value, e).Item2;
