@@ -19,7 +19,6 @@ public static partial class UIToolKitExtensions
     public static Label Label() => new();
     public static Image Image() => new();
 
-    public static T Create<T>(this VisualElement container) where T : VisualElement, new() => new T().Container(container);
     public static T Make<T>(this VisualElement container) where T : VisualElement, new() => new T().Container(container);
 
     public static VisualElement VisualElement(this VisualElement container) => new VisualElement().Container(container);
