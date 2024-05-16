@@ -191,6 +191,7 @@ public static partial class UIToolKitExtensions
    
     public static T Display<T>(this T e, DisplayStyle value) where T : VisualElement => (e.style.display = value, e).Item2;
     public static T Display<T>(this T e, bool value) where T : VisualElement => (e.style.display = value ? DisplayStyle.Flex : DisplayStyle.None, e).Item2;
+    public static T ToggleDisplay<T>(this T e) where T : VisualElement => (e.style.display = e.style.display == DisplayStyle.None ? DisplayStyle.Flex : DisplayStyle.None, e).Item2;
     
     public static T Hide<T>(this T e) where T : VisualElement => (e.style.display = DisplayStyle.None, e).Item2;
     public static T Show<T>(this T e) where T : VisualElement => (e.style.display = DisplayStyle.Flex, e).Item2;
