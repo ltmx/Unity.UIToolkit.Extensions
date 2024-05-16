@@ -73,6 +73,24 @@ public static partial class UIToolKitExtensions
         e.RemoveFromClassList(A);
         return e;
     }
+    public static T RemoveUSS<T>(this T e, string A, string B) where T : VisualElement {
+        e.RemoveFromClassList(A);
+        e.RemoveFromClassList(B);
+        return e;
+    }
+    public static T RemoveUSS<T>(this T e, string A, string B, string C) where T : VisualElement {
+        e.RemoveFromClassList(A);
+        e.RemoveFromClassList(B);
+        e.RemoveFromClassList(C);
+        return e;
+    }
+    public static T RemoveUSS<T>(this T e, string A, string B, string C, string D) where T : VisualElement {
+        e.RemoveFromClassList(A);
+        e.RemoveFromClassList(B);
+        e.RemoveFromClassList(C);
+        e.RemoveFromClassList(D);
+        return e;
+    }
 
     public static T StateUSS<T>(this T e, bool state, string A) where T : VisualElement
     {
