@@ -159,6 +159,15 @@ public static partial class UIToolKitExtensions
     
     // Merged MaxWidth and MaxHeight
     public static T MaxSize<T>(this T e, float value) where T : VisualElement => (e.style.maxWidth = e.style.maxHeight = value, e).Item2;
+    public static T MaxSize<T>(this T e, float2 value) where T : VisualElement
+    {
+        
+        e.style.maxWidth = value.x;
+        e.style.maxHeight = value.y;
+        return e;
+    }
+
+    // e.style.maxHeight = value.y, e).Item2;
     
     // Merged MinWidth and MinHeight
     public static T MinSize<T>(this T e, float value) where T : VisualElement => (e.style.minWidth = e.style.minHeight = value, e).Item2;
