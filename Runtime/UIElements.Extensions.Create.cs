@@ -28,6 +28,10 @@ public static partial class UIToolKitExtensions
     public static Button Button(this VisualElement container) => new Button().Container(container);
     public static Label Label(this VisualElement container) => new Label().Container(container);
     public static Image Image(this VisualElement container) => new Image().Container(container);
+    
+    public static Slider Slider(this VisualElement container) => new Slider().Container(container);
+    public static Slider Slider(this VisualElement container, float min, float max) => new Slider(min, max).Container(container);
+    public static Slider Slider(this VisualElement container, float min, float max, SliderDirection dir,  float value) => new Slider(min, max, dir, value).Container(container);
 
 
     public static Image Image(this VisualElement container, Texture2D texture) => new Image { image = texture }.Container(container);
