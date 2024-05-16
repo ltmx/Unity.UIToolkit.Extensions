@@ -52,4 +52,11 @@ public static partial class UIToolKitExtensions
     }
 
     public static void Clean(this TextField textField) => textField.value = textField.value.Clean();
+
+    public static T AddMe<T, U>(this T v, U child) where T : VisualElement where U : VisualElement
+    {
+        v.Add(child);
+        return v;
+    }
+
 }
