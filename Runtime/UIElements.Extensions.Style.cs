@@ -12,7 +12,6 @@ using TextElement = UnityEngine.UIElements.TextElement;
 
 public static partial class UIToolKitExtensions
 {
-
     #region Common Stying
 
     // Margin
