@@ -25,56 +25,58 @@ public static partial class UIToolKitExtensions
 
     public static void RegisterOnClickOutside(this VisualElement e, Action action)
     {
-        e.panel.visualTree.Callback(OnClickOutsideWindow);
+        e.panel.visualTree.Callback(OnClickOutsideWindow, TrickleDown.TrickleDown);
         return;
 
         // local function
         void OnClickOutsideWindow(MouseDownEvent evt)
         {
-            e.layout.Contains(evt.mousePosition).IfFalse(action.Invoke);
+            evt.button.Equals(0).AndNot(e.layout.Contains(evt.mousePosition)).IfTrue(action);
         }
     }
 
-    public static void Callback(this VisualElement e, EventCallback<KeyDownEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<KeyUpEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<GeometryChangedEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<KeyDownEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<KeyUpEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<GeometryChangedEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<MouseDownEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<MouseUpEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<MouseDownEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<MouseUpEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<MouseMoveEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<MouseEnterEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<MouseMoveEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<MouseEnterEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<MouseLeaveEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<MouseLeaveEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<WheelEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<WheelEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<FocusOutEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<FocusOutEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<FocusInEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<BlurEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<FocusEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<FocusInEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<BlurEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<FocusEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<AttachToPanelEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<AttachToPanelEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<DetachFromPanelEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<CustomStyleResolvedEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<DetachFromPanelEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<CustomStyleResolvedEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<ExecuteCommandEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<ValidateCommandEvent> action) => e.RegisterCallback(action);
-    public static void Callback(this VisualElement e, EventCallback<InputEvent> action) => e.RegisterCallback(action);
+    public static void Callback(this VisualElement e, EventCallback<ExecuteCommandEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<ValidateCommandEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback(this VisualElement e, EventCallback<InputEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    
+    public static void Callback(this VisualElement e, EventCallback<ClickEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<DragUpdatedEvent> action) => e.RegisterCallback(action);
+    public static void Callback<T>(this VisualElement e, EventCallback<ChangeEvent<T>> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    public static void Callback<T>(this VisualElement e, EventCallback<T> action, TrickleDown trickleDown = TrickleDown.TrickleDown) where T : EventBase<T>, new()
+        => e.RegisterCallback(action, trickleDown);
+    
+    // todo find why these can't be included in build
+    // public static void Callback(this VisualElement e, EventCallback<DragUpdatedEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    // public static void Callback(this VisualElement e, EventCallback<DragPerformEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    // public static void Callback(this VisualElement e, EventCallback<DragExitedEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
+    // public static void Callback(this VisualElement e, EventCallback<DragEnterEvent> action, TrickleDown trickleDown = TrickleDown.TrickleDown) => e.RegisterCallback(action, trickleDown);
 
-    public static void Callback(this VisualElement e, EventCallback<DragPerformEvent> action) => e.RegisterCallback(action);
 
-    public static void Callback(this VisualElement e, EventCallback<DragExitedEvent> action) => e.RegisterCallback(action);
-
-    public static void Callback(this VisualElement e, EventCallback<DragEnterEvent> action) => e.RegisterCallback(action);
-
-    public static void Callback(this VisualElement e, EventCallback<ClickEvent> action) => e.RegisterCallback(action);
-
-    public static void Callback<T>(this VisualElement e, EventCallback<ChangeEvent<T>> action) => e.RegisterCallback(action);
 
 
     public static void RegisterOnMouseLeave(this VisualElement e, Action action)
@@ -100,8 +102,12 @@ public static partial class UIToolKitExtensions
         e.RegisterCallback<MouseEnterEvent>(_ => target.Show());
         e.RegisterCallback<MouseLeaveEvent>(_ => target.Hide());
     }
+    /// <summary>
+    /// The default state of the target is invisible
+    /// </summary>
     public static void MakeTargetVisibleOnHover(this VisualElement e, VisualElement target)
     {
+        target.visible = false;
         e.RegisterCallback<MouseEnterEvent>(_ => target.Visible(true));
         e.RegisterCallback<MouseLeaveEvent>(_ => target.Visible(false));
     }
