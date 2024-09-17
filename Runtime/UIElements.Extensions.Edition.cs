@@ -53,7 +53,7 @@ public static partial class UIToolKitExtensions
     }
     public static VisualElement LastChildWithClass(this VisualElement e, string A)
     {
-        return e.Children().Last(x => x.ClassListContains(A));
+        return e.Children().LastOrDefault(x => x.ClassListContains(A));
     }
     
     public static IEnumerable<T> USS<T>(this IEnumerable<T> e, string A) where T : VisualElement {

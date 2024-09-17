@@ -222,7 +222,6 @@ public static partial class UIToolKitExtensions
     
     public static T MaskChar<T>(this T e, char value) where T : TextField => (e.maskChar = value, e).Item2;
     
-
     #endregion
     
     public static T Focusable<T>(this T e, bool value) where T : VisualElement => (e.focusable = value, e).Item2;
