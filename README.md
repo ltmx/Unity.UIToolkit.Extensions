@@ -21,7 +21,7 @@ Looks :
         
         var inputTextField = row.TextField()
             .Multiline(true)
-            .Value(AthenaSettings.DefaultPrompt)
+            .Value("Hello")
             .ToolTip("[Shift + Enter] to SEND\n[Esc] to STOP chat")
             .Placeholder("Type your message here")
             .HidePlaceholderOnFocus(true);
